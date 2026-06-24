@@ -1,0 +1,350 @@
+/*
+  Minimal portfolio styles
+
+  This stylesheet uses CSS custom properties (variables) to make it easy to tweak
+  colours and spacing. To change the overall look of your site, modify the variables
+  defined under :root.
+*/
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #222222;
+  --accent-color: #007acc;
+  --accent-light: #e6f3ff;
+  /*
+    Hero background can be a gradient or image.
+    To use your own photo (e.g. a picture of you next to a robot), place your
+    image in the `images` folder and set this variable to:
+
+      --hero-bg-image: url('images/your-photo.jpg');
+
+    If you prefer a gradient, leave the linear-gradient value below or
+    replace the colours with ones you like.
+  */
+  --hero-bg-image: linear-gradient(135deg, #fafbfd 0%, #fcf7f4 100%);
+
+  /* Control the size of the name in the hero. Reduce this value to make
+     your name less overpowering (use rem or responsive units). */
+  --hero-title-size: 2.3rem;
+
+  /* Control the opacity of the dark overlay behind the hero text. Lower values
+     make the overlay lighter and the background image/gradient more visible. */
+  --hero-overlay-opacity: 0.25;
+
+  /* Control the minimum width of project cards on large screens. Increase
+     this to make cards larger; decrease it to fit more cards per row. */
+  --project-min-width: 380px;
+  --font-family: 'Segoe UI', Tahoma, sans-serif;
+  --container-width: 960px;
+  --border-radius: 8px;
+  --transition-speed: 0.2s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+header.hero {
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  /* Reduce the vertical padding of the hero so the heading isn't overwhelming */
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  /* Use the custom overlay opacity variable for consistent theming */
+  background-color: rgba(0, 0, 0, var(--hero-overlay-opacity));
+  display: inline-block;
+  padding: 20px 40px;
+  border-radius: var(--border-radius);
+}
+
+.hero h1 {
+  /* Use the hero title size variable to make it easy to adjust */
+  font-size: var(--hero-title-size);
+  margin-bottom: 0.5rem;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+nav.site-nav {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav.site-nav a {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color var(--transition-speed);
+}
+
+nav.site-nav a:hover {
+  color: var(--accent-light);
+}
+
+main {
+  max-width: var(--container-width);
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Project list layout */
+.project-list {
+  display: grid;
+  /* Increase minimum width so project cards appear larger on desktop. Uses
+     --project-min-width to make it easy to adjust card size from the
+     variables section above. */
+  grid-template-columns: repeat(auto-fit, minmax(var(--project-min-width), 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--accent-light);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-media {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.project-media img,
+.project-media iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-content {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.project-description {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.project-technologies {
+  margin-bottom: 10px;
+}
+
+.project-technologies span {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.project-link a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.project-link a:hover {
+  color: var(--text-color);
+}
+
+footer {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+/* ===== Sud custom portfolio polish ===== */
+
+main {
+  max-width: 1100px;
+}
+
+.project-list {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.project-media {
+  aspect-ratio: 16 / 10;
+}
+
+.project-content {
+  padding: 22px;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.project-description {
+  font-size: 0.98rem;
+}
+/* ===== Subtle robot background hero ===== */
+
+header.hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 48%,
+      rgba(255, 255, 255, 0.62) 100%
+    ),
+    url('images/robot-background.jpeg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: #111111;
+  padding: 120px 20px;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.76);
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+  color: #111111;
+  font-size: 2.25rem;
+}
+
+.hero .tagline {
+  color: #333333;
+}
+/* ===== Sud custom portfolio polish ===== */
+
+main {
+  max-width: 1120px;
+}
+
+.project-list {
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 32px;
+}
+
+.project-card {
+  border-radius: 14px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.project-media {
+  aspect-ratio: 16 / 10;
+}
+
+.project-content {
+  padding: 22px;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.project-description {
+  font-size: 0.98rem;
+}
+
+/* ===== Subtle robot background hero ===== */
+
+header.hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(255, 255, 255, 0.88) 48%,
+      rgba(255, 255, 255, 0.62) 100%
+    ),
+    url('images/robot-background.jpeg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  color: #111111;
+  padding: 120px 20px;
+}
+
+.hero-content {
+  background-color: rgba(255, 255, 255, 0.76);
+  color: #111111;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(4px);
+}
+
+.hero h1 {
+  color: #111111;
+  font-size: 2.25rem;
+}
+
+.hero .tagline {
+  color: #333333;
+}
+/* Adjust hero photo crop so faces/robot head are visible */
+header.hero {
+  background-position: right 18%;
+  padding: 150px 20px;
+}

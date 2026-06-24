@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    This is a minimal, responsive portfolio website template.
+
+    ✏️ Customising your portfolio:
+      • To change the site title, edit the <title> element below and the heading in the hero section.
+      • To update your biography text, modify the content inside the <p> in the #about section.
+      • Projects are defined in the file `projects.js`. Each project entry includes a title, description,
+        image and/or video, a list of technologies and a link. Add as many entries as you like – the
+        page will update automatically when loaded.
+      • To reorder projects, simply change the order of the objects in the `projects` array in
+        `projects.js`.
+      • To change the background image of the hero section, replace `hero-bg.png` in the
+        `images` folder with your own image and update the CSS variable `--hero-bg-image` in
+        `styles.css` if necessary.
+      • Feel free to adjust colours in `styles.css` by editing the CSS variables at the top of the file.
+
+    🧪  This template uses no external libraries, so it’s easy to host on free services like GitHub
+       Pages or Netlify. Unlimited people can view the site at once as long as your host allows
+       sufficient bandwidth.
+  -->
+  <title>Sudheshna Dharmapuri – Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Sudheshna Dharmapuri</h1>
+      <p class="tagline">Robotics Perception • SLAM/VIO • RGB-D Mapping • ROS 2</p>
+    </div>
+  </header>
+
+  <nav class="site-nav">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a robotics engineer focused on perception, SLAM/VIO, sensor calibration,
+        object tracking, RGB-D mapping, and ROS 2 robotics software. My projects
+        emphasize reproducible experiments, visual demos, practical robot relevance,
+        and clear engineering documentation.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <!-- Project cards will be inserted here by projects.js -->
+      <div class="project-list"></div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Email: <a href="mailto:sudheshnad49@gmail.com">sudheshnad49@gmail.com</a><br>
+        GitHub: <a href="https://github.com/Sid-Dhar4" target="_blank" rel="noopener noreferrer">github.com/Sid-Dhar4</a><br>
+        LinkedIn: <a href="https://linkedin.com/in/sudheshna-d-9a7511298" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Sudheshna Dharmapuri. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript to populate the project list and update the year -->
+  <script src="projects.js"></script>
+  <script>
+    // Update the copyright year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
