@@ -1,26 +1,26 @@
 const projects = [
   {
     title: 'Real-Time Object Tracking Under a Robotics Latency Budget',
-    metric: 'KITTI tracking · HOTA 46.6 · IDF1 61.9 · ROS 2 risk topics · C++ tracking core',
-    description: 'A robotics perception system for detection and multi-object tracking under practical latency constraints. Uses KITTI tracking data, YOLOv8, ByteTrack, TrackEval, ROS 2 outputs, risk diagnostics, and accuracy-latency evaluation.',
+    metric: 'KITTI MOT benchmark · HOTA 46.6 · IDF1 61.9 · ROS 2 risk topics · C++ tracking core',
+    description: 'A robotics perception benchmark for detection and multi-object tracking under practical latency constraints. Uses KITTI tracking data, YOLOv8, ByteTrack, TrackEval, ROS 2 outputs, risk diagnostics, and accuracy-latency evaluation.',
     image: 'images/tracking-demo.gif',
     technologies: ['Python', 'YOLOv8', 'ByteTrack', 'KITTI', 'ROS 2', 'C++'],
     link: 'https://github.com/Sid-Dhar4/real-time-tracking-latency-budget',
     linkLabel: 'View GitHub'
   },
   {
-    title: 'VIO / SLAM Evaluation and Failure Atlas',
+    title: 'VIO / SLAM Benchmark and Failure Atlas',
     metric: 'ORB-SLAM3 vs OpenVINS · EuRoC MH_01/MH_03/MH_05 · evo APE/RPE · failure atlas',
-    description: 'A reproducible evaluation comparing ORB-SLAM3 and OpenVINS on EuRoC Machine Hall sequences with trajectory conversion, evo APE/RPE metrics, runtime logging, trajectory plots, and sequence-level failure analysis.',
+    description: 'A reproducible benchmark comparing ORB-SLAM3 and OpenVINS on EuRoC Machine Hall sequences with trajectory conversion, evo APE/RPE metrics, runtime logging, trajectory plots, and sequence-level failure analysis.',
     image: 'images/slam-demo.gif',
     technologies: ['VIO', 'SLAM', 'ORB-SLAM3', 'OpenVINS', 'EuRoC', 'evo'],
-    link: 'https://github.com/Sid-Dhar4/vio-slam-evaluation-failure-atlas',
+    link: 'https://github.com/Sid-Dhar4/vio-slam-benchmark-failure-atlas',
     linkLabel: 'View GitHub'
   },
   {
-    title: 'Camera–IMU Calibration Sensitivity Study',
+    title: 'Camera–IMU Calibration Sensitivity Benchmark',
     metric: 'OpenVINS/EuRoC · 5° extrinsic error → 25.8× ATE increase on MH_01',
-    description: 'An OpenVINS evaluation measuring how camera–IMU extrinsic and timestamp perturbations affect VIO accuracy. Includes controlled perturbations, frozen online calibration, evo ATE/RPE metrics, trajectory overlays, and limitation notes.',
+    description: 'A reproducible OpenVINS benchmark measuring how camera–IMU extrinsic and timestamp perturbations affect VIO accuracy. Includes controlled perturbations, frozen online calibration, evo ATE/RPE metrics, trajectory overlays, and limitation notes.',
     image: 'images/camera-imu-demo.png',
     technologies: ['OpenVINS', 'Camera-IMU', 'SE(3)', 'Python', 'ROS 2', 'evo'],
     link: 'https://github.com/Sid-Dhar4/camera-imu-calibration-sensitivity',

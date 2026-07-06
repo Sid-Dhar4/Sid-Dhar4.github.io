@@ -498,37 +498,3 @@ header.hero::after {
     background-position: right top;
   }
 }
-
-/* ===== Cleanup: no profile photo, no evidence label, cleaner hero ===== */
-
-header.hero {
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(0, 122, 204, 0.08), transparent 30%),
-    linear-gradient(135deg, #ffffff 0%, #f6fbff 100%) !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-header.hero::after {
-  display: none !important;
-  content: none !important;
-}
-
-.eyebrow,
-.hero-evidence {
-  display: none !important;
-}
-
-.hero-content {
-  max-width: 780px;
-}
-
-.hero h1 {
-  margin-bottom: 12px;
-}
-
-.hero .tagline {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
